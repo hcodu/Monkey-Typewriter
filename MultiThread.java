@@ -1,5 +1,8 @@
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Stack;
 import java.util.Timer;
+
 
 public class MultiThread implements Runnable {
     SizeLimitedQueue queue;
@@ -30,6 +33,8 @@ public class MultiThread implements Runnable {
         try {
             // Displaying the thread that is running
 
+
+
             stopwatch.start();
 
             while(true) {
@@ -38,19 +43,19 @@ public class MultiThread implements Runnable {
                 String letter = Character.toString(c);
                 queue.addElement(letter);
 
-                System.out.println(queue.getWord());
+                //System.out.println(queue.getWord());
                 
                 for(int i = 0; i < list.length; i++) {
                     if(queue.getWord().equalsIgnoreCase(list[i])) {
                         wordStack.push((String) list[i]);
-                        System.out.println("Monkey Got " + wordStack.peek() + " in " + stopwatch.getElapsedSeconds() + " seconds");
+                        System.out.println("Monkey typed " + wordStack.peek() + " in " + stopwatch.getElapsedSeconds() + " seconds");
                         break;
                     }
                 }
 
-                if(wordStack.size() != 0) {
-                    break;
-                }
+                // if(wordStack.size() != 0) {
+                //     break;
+                // }
 
                 Thread.sleep(20);
 
@@ -61,4 +66,6 @@ public class MultiThread implements Runnable {
             System.out.println("Exception is caught");
         }
     }
+
+
 }
