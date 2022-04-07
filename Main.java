@@ -7,10 +7,7 @@ public class Main {
         };
 
         CSVParser csv = new CSVParser("C://Users/harry/Downloads/Wordle.csv");
-
         String[] list2 = csv.getList();
-
-    
 
         Scanner sc = new Scanner(System.in);
         System.out.println(" \n Type a word to be guessed or type 'list' to use the list of 5 letter words"); 

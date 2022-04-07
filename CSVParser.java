@@ -27,7 +27,7 @@ public class CSVParser {
             }
             fileScanner.close();
 
-            System.out.println(list);
+            //System.out.println(list);
             
         }
         catch(FileNotFoundException e) {
@@ -60,6 +60,15 @@ public class CSVParser {
 		for(int j = 0; j < list.size(); j++){
 		  array[j] = list.get(j);
 		}
+
+        // for(int i = 0; i < array.length; i++) {
+        //     //System.out.println(array[i]);
+        // }
+
+
+
         return array;
+
+
     }
   }
